@@ -4,7 +4,6 @@
     name: "{{ item.name }}"
     driver: "{{ item.driver | default('bridge') }}"
     driver_options: "{{ item.driver_options | default(omit) }}"
-    internal: "{{ item.internal | default('no') }}"
     connected: "{{ item.containers  | default (omit) }}"
     ipam_config: "{{item.ipam_config | default(omit) }}"
   loop: "{{ docker_networks }}"
