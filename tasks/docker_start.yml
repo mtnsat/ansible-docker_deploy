@@ -62,6 +62,9 @@
         restart:        "{{ app_status[docker_image_with_ver]['changed'] | default(docker_force_restart) }}"
         pull:           false # always pull from the docker_pull.yml, NOT here
 
+        # options for graceful shutdown of containers that need time for cleanup tasks
+        stop_signal: "{{ docker_app['docker']['stop_signal']     | default(omit) }}"
+        stop_timeout: "{{ docker_app['docker']['stop_timeout']     | default(omit) }}"
   #--------------------------
   # end block
   #--------------------------
