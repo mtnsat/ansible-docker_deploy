@@ -6,6 +6,7 @@
     driver_options: "{{ item.driver_options | default(omit) }}"
     internal: "{{ item.internal | default('no') }}"
     connected: "{{ item.containers  | default (omit) }}"
-    ipam_config: "{{item.ipam_config | default(omit) }}"
+    ipam_config: "{{ item.ipam_config | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
   loop: "{{ docker_networks }}"
   when: docker_networks is defined
