@@ -50,6 +50,7 @@
         volume_driver:  "{{docker_app['docker']['volume_driver']   | default(omit) }}"
         tty:            "{{ docker_app['docker']['tty']            | default(omit) }}"
         privileged:     "{{ docker_app['docker']['privileged']     | default(omit) }}"
+        etc_hosts:      "{{ docker_app['docker']['etc_hosts']     | default(omit) }}"        
 
         # You will want your container connected directly to the host 
         # OR to a named docker network, *probably* not both
