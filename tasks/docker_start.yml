@@ -70,6 +70,12 @@
         memory:             "{{ docker_app['docker']['memory']     | default(omit) }}"
         memory_reservation: "{{ docker_app['docker']['memory_reservation']     | default(omit) }}"
 
+        # Security
+        security_opts:      "{{ docker_app['docker']['security_opts']     | default(omit) }}"
+
+        # CPU
+        cpuset_cpus:        "{{ docker_app['docker']['cpuset_cpus']     | default(omit) }}"
+
   #--------------------------
   # end block
   #--------------------------
